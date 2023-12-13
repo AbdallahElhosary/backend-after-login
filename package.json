@@ -5,14 +5,16 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "node index.js",
-    "start": "SET NODE_ENV=production & node server.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Boghdady/preparing-nodejs-course.git"
   },
   "keywords": [],
+  "engines": {
+    "node": "18.18.0"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -52,8 +54,6 @@
     "eslint-plugin-react": "^7.28.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1"
-  },
-  "engines": {
-    "node": "18.18.0"
   }
+  
 }
