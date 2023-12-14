@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const autoIncrement = require('mongoose-auto-increment');
+const autoIncrement = require('mongoose-auto-increment')
 
 // npm install --save --legacy-peer-deps mongoose-auto-increment
 const connection = mongoose.createConnection(process.env.DB_URI);
@@ -20,6 +20,10 @@ const orderSchema = new mongoose.Schema(
         price: Number,
       },
     ],
+    count: {
+      type: Number,
+      default: 0,
+    },
     shippingAddress: {
       details: String,
       phone: String,
@@ -75,5 +79,10 @@ orderSchema.plugin(autoIncrement.plugin, {
   startAt: 1,
   incrementBy: 1,
 });
+
+// orderSchema.pre("save", function (next) {
+//   this.count += 1;
+//   next();
+// })
 
 module.exports = mongoose.model('Order', orderSchema);
